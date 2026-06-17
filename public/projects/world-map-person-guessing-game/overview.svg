@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">World-map person guessing game placeholder screenshot</title>
+  <desc id="desc">A placeholder interface preview for the World-map person guessing game project.</desc>
+  <rect width="1200" height="760" fill="#f7f5f0"/>
+  <rect x="76" y="70" width="1048" height="620" rx="24" fill="#ffffff" stroke="#d7d0c4" stroke-width="4"/>
+  <path d="M235 334c74-74 176-116 282-112 104 4 201 54 268 136 66 80 154 116 255 109" fill="none" stroke="#0f766e" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="370" cy="284" r="54" fill="#134e4a"/>
+  <circle cx="615" cy="386" r="38" fill="#0f766e"/>
+  <circle cx="852" cy="468" r="48" fill="#d7d0c4"/>
+  <rect x="144" y="134" width="310" height="58" rx="12" fill="#ece7dc"/>
+  <rect x="144" y="566" width="426" height="42" rx="10" fill="#ece7dc"/>
+  <rect x="144" y="624" width="320" height="30" rx="8" fill="#ece7dc"/>
+  <text x="144" y="176" fill="#134e4a" font-family="Arial, sans-serif" font-size="30">Map Guess</text>
+</svg>
