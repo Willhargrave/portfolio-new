@@ -88,7 +88,7 @@ export default async function HomePage({ params }: HomePageProps) {
                 GitHub
               </a>
             </div>
-            <div className="reveal-on-load reveal-delay-4">
+            <div className="reveal-on-load reveal-delay-3">
               <SkillsCarousel />
             </div>
           </div>

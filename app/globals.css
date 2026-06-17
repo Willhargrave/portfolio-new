@@ -50,19 +50,15 @@ a {
 }
 
 .reveal-delay-1 {
-  animation-delay: 120ms;
+  animation-delay: 0ms;
 }
 
 .reveal-delay-2 {
-  animation-delay: 320ms;
+  animation-delay: 1000ms;
 }
 
 .reveal-delay-3 {
-  animation-delay: 540ms;
-}
-
-.reveal-delay-4 {
-  animation-delay: 760ms;
+  animation-delay: 2000ms;
 }
 
 @keyframes reveal-on-load {
