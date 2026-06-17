@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { PageLoadIndicator } from "@/components/page-load-indicator";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { getLanguageAlternates, isLocale, localeCopy, locales } from "@/lib/i18n";
@@ -50,10 +51,12 @@ export default async function LocaleLayout({
   }
 
   return (
-    <div className="flex min-h-screen flex-col" lang={localeParam}>
-      <SiteHeader locale={localeParam} />
-      <main className="flex-1">{children}</main>
-      <SiteFooter locale={localeParam} />
-    </div>
+    <PageLoadIndicator>
+      <div className="flex min-h-screen flex-col" lang={localeParam}>
+        <SiteHeader locale={localeParam} />
+        <main className="flex-1">{children}</main>
+        <SiteFooter locale={localeParam} />
+      </div>
+    </PageLoadIndicator>
   );
 }

@@ -40,3 +40,82 @@ a {
   outline: 3px solid var(--accent);
   outline-offset: 3px;
 }
+
+.app-shell-enter {
+  animation: app-shell-enter 420ms ease-out both;
+}
+
+.reveal-on-load {
+  animation: reveal-on-load 520ms ease-out both;
+}
+
+.reveal-delay-1 {
+  animation-delay: 120ms;
+}
+
+.reveal-delay-2 {
+  animation-delay: 320ms;
+}
+
+.reveal-delay-3 {
+  animation-delay: 540ms;
+}
+
+.reveal-delay-4 {
+  animation-delay: 760ms;
+}
+
+@keyframes reveal-on-load {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.projects-enter {
+  animation: projects-enter 520ms ease-out both;
+}
+
+@keyframes app-shell-enter {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes projects-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
+
+  .app-shell-enter,
+  .projects-enter,
+  .reveal-on-load {
+    animation: none;
+  }
+}

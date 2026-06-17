@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/container";
 import { ProjectCard } from "@/components/project-card";
+import { ProjectsReveal } from "@/components/projects-reveal";
 import { SkillsCarousel } from "@/components/skills-carousel";
 import { getLanguageAlternates, isLocale, localeCopy } from "@/lib/i18n";
 import { projects } from "@/lib/projects";
@@ -42,13 +43,16 @@ export default async function HomePage({ params }: HomePageProps) {
   }
 
   const copy = localeCopy[localeParam];
+  const activeProjects = projects.filter(
+    (project) => project.status === "active",
+  );
 
   return (
     <>
       <section className="bg-[color:var(--surface)]">
         <Container className="grid gap-12 py-16 md:grid-cols-[1.2fr_0.8fr] md:items-start md:py-24">
           <div className="min-w-0">
-            <h1 className="mt-5 max-w-3xl text-4xl font-semibold tracking-normal text-[color:var(--foreground)] sm:text-5xl">
+            <h1 className="reveal-on-load reveal-delay-1 mt-5 max-w-3xl text-4xl font-semibold tracking-normal text-[color:var(--foreground)] sm:text-5xl">
               {localeParam === "ja" ? (
                 <span className="flex flex-col gap-4">
                   <span>Will Hargrave</span>
@@ -63,12 +67,12 @@ export default async function HomePage({ params }: HomePageProps) {
                 </span>
               )}
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-[color:var(--muted)]">
+            <p className="reveal-on-load reveal-delay-1 mt-6 max-w-2xl text-lg leading-8 text-[color:var(--muted)]">
               {localeParam === "ja"
                 ? "フルスタック領域で経験を持つイギリス出身のソフトウェアエンジニアで、現在は日本での機会を探しています。他のエンジニアと協力し、学び合いながら新しいアイデアを形にすることが好きです。ソフトウェアエンジニアリングはより良い世界を作る最前線にあると考えており、その理想に合う企業で働くことに情熱を持っています。"
                 : "British software engineer with experience across the stack, currently looking for opportunities in Japan. I enjoy working with and learning from other engineers to develop new ideas. I believe software engineering is at the forefront of creating a better world and I am passionate about working for companies that are aligned with these ideals"}
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="reveal-on-load reveal-delay-1 mt-8 flex flex-wrap gap-3">
               <a
                 href={`mailto:${site.email}`}
                 className="font-heading rounded-md border border-[color:var(--border)] bg-[color:var(--surface)] px-5 py-3 text-sm font-medium text-[color:var(--foreground)] transition-colors hover:border-[color:var(--accent)] hover:text-[color:var(--accent-strong)]"
@@ -84,10 +88,12 @@ export default async function HomePage({ params }: HomePageProps) {
                 GitHub
               </a>
             </div>
-            <SkillsCarousel />
+            <div className="reveal-on-load reveal-delay-4">
+              <SkillsCarousel />
+            </div>
           </div>
 
-          <aside className="rounded-lg border border-[color:var(--border)] bg-[color:var(--surface-alt)] p-6">
+          <aside className="reveal-on-load reveal-delay-2 rounded-lg border border-[color:var(--border)] bg-[color:var(--surface-alt)] p-6">
             <h2 className="text-base font-semibold text-[color:var(--foreground)]">
               {localeParam === "ja" ? "職務経験" : "Work Experience"}
             </h2>
@@ -167,22 +173,24 @@ export default async function HomePage({ params }: HomePageProps) {
             </h2>
           </div>
 
-          <div
-            className="-mx-5 mt-10 flex snap-x snap-mandatory gap-8 overflow-x-auto px-5 pb-8 sm:-mx-8 sm:gap-10 sm:px-8"
-            aria-label={
-              localeParam === "ja"
-                ? "プロジェクトカルーセル"
-                : "Project carousel"
-            }
-          >
-            {projects.map((project) => (
-              <ProjectCard
-                key={project.slug}
-                locale={localeParam}
-                project={project}
-              />
-            ))}
-          </div>
+          <ProjectsReveal>
+            <div
+              className="-mx-5 mt-10 flex snap-x snap-mandatory gap-8 overflow-x-auto px-5 pb-8 sm:-mx-8 sm:gap-10 sm:px-8"
+              aria-label={
+                localeParam === "ja"
+                  ? "プロジェクトカルーセル"
+                  : "Project carousel"
+              }
+            >
+              {activeProjects.map((project) => (
+                <ProjectCard
+                  key={project.slug}
+                  locale={localeParam}
+                  project={project}
+                />
+              ))}
+            </div>
+          </ProjectsReveal>
         </Container>
       </section>
     </>

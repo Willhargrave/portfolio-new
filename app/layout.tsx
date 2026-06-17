@@ -15,7 +15,7 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://example.com"),
+  metadataBase: new URL("https://will-hargrave-portfolio.vercel.app"),
   title: {
     default: "Will H. | Software Engineering Portfolio",
     template: "%s | Will H.",
