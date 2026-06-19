@@ -14,6 +14,22 @@ export interface ProjectScreenshot {
   height: number;
 }
 
+export interface ProjectPanelTheme {
+  background: string;
+  foreground: string;
+  muted: string;
+  border: string;
+  accent: string;
+  mediaBackground: string;
+  chipBackground: string;
+  chipForeground: string;
+  badgeBackground: string;
+  badgeForeground: string;
+  buttonBackground: string;
+  buttonForeground: string;
+  buttonHoverBackground: string;
+}
+
 export interface LocalizedProjectContent {
   name: string;
   shortSummary: string;
@@ -30,6 +46,7 @@ export interface Project {
   screenshots: ProjectScreenshot[];
   githubUrl?: string;
   liveUrl: string;
+  panelTheme?: ProjectPanelTheme;
   content: Record<Locale, LocalizedProjectContent>;
 }
 
@@ -119,6 +136,21 @@ export const projects: Project[] = [
     status: "active",
     technologies: ["Next", "React", "Supabase", "Python"],
     liveUrl: "https://football-quiz-iota.vercel.app/",
+    panelTheme: {
+      background: "#1B7A4A",
+      foreground: "#FFFFFF",
+      muted: "#E5F4EC",
+      border: "#145C38",
+      accent: "#D6FFE8",
+      mediaBackground: "#145C38",
+      chipBackground: "#D6FFE8",
+      chipForeground: "#123B27",
+      badgeBackground: "#D6FFE8",
+      badgeForeground: "#123B27",
+      buttonBackground: "#FFFFFF",
+      buttonForeground: "#145C38",
+      buttonHoverBackground: "#D6FFE8",
+    },
     screenshots: [
       {
         src: "/screenshots/Journeyman.jpeg",
@@ -174,6 +206,21 @@ export const projects: Project[] = [
       "Wikipedia REST API",
     ],
     liveUrl: "https://person-game-iota.vercel.app/",
+    panelTheme: {
+      background: "#99DAF4",
+      foreground: "#102533",
+      muted: "#244657",
+      border: "#5BAFD2",
+      accent: "#0B4F71",
+      mediaBackground: "#D7F3FE",
+      chipBackground: "#EAF9FE",
+      chipForeground: "#12384A",
+      badgeBackground: "#EAF9FE",
+      badgeForeground: "#0B4F71",
+      buttonBackground: "#102533",
+      buttonForeground: "#FFFFFF",
+      buttonHoverBackground: "#0B4F71",
+    },
     screenshots: [
       {
         src: "/screenshots/Sketch Atlas Guess.jpeg",
@@ -229,6 +276,21 @@ export const projects: Project[] = [
       "Vercel",
     ],
     liveUrl: "https://card-snap-helper.vercel.app/",
+    panelTheme: {
+      background: "#000000",
+      foreground: "#FFFFFF",
+      muted: "#D6D6D6",
+      border: "#2F2F2F",
+      accent: "#FFFFFF",
+      mediaBackground: "#171717",
+      chipBackground: "#FFFFFF",
+      chipForeground: "#171717",
+      badgeBackground: "#FFFFFF",
+      badgeForeground: "#171717",
+      buttonBackground: "#FFFFFF",
+      buttonForeground: "#000000",
+      buttonHoverBackground: "#D6D6D6",
+    },
     screenshots: [
       {
         src: "/screenshots/Card Snap.jpeg",

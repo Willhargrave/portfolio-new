@@ -9,7 +9,7 @@ export function TechnologyChip({ technology }: TechnologyChipProps) {
   const icon = technologyIcons[technology];
 
   return (
-    <li className="inline-flex min-h-8 items-center gap-2 whitespace-nowrap rounded-md bg-[color:var(--surface-alt)] px-2.5 py-1 text-sm text-[color:var(--muted)]">
+    <li className="inline-flex min-h-8 items-center gap-2 whitespace-nowrap rounded-md bg-[color:var(--project-chip-background,var(--surface-alt))] px-2.5 py-1 text-sm text-[color:var(--project-chip-foreground,var(--muted))]">
       {icon ? (
         <Image
           src={icon.iconUrl}

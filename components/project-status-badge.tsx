@@ -12,7 +12,7 @@ export function ProjectStatusBadge({
   status,
 }: ProjectStatusBadgeProps) {
   return (
-    <span className="inline-flex w-fit items-center rounded-full border border-[color:var(--border)] bg-[color:var(--surface-alt)] px-3 py-1 text-xs font-medium uppercase tracking-wide text-[color:var(--accent-strong)]">
+    <span className="inline-flex w-fit items-center rounded-full border border-[color:var(--project-border,var(--border))] bg-[color:var(--project-badge-background,var(--surface-alt))] px-3 py-1 text-xs font-medium uppercase tracking-wide text-[color:var(--project-badge-foreground,var(--accent-strong))]">
       {statusLabels[status][locale]}
     </span>
   );

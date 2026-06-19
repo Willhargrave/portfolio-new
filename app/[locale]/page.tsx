@@ -174,7 +174,7 @@ export default async function HomePage({ params }: HomePageProps) {
             <p className="mt-4 text-base leading-7 text-[color:var(--muted)]">
               {localeParam === "ja"
                 ? "これらは、最新のトレンドを追いながら、創造的にアイデアを探求するために、この 1 年ほど取り組んできたプロジェクトの一部です。"
-                : "These are some of the projects I have been working on in the last year to keep up to date with the latest trends and explore ideas in a creative way."}
+                : "These are some of the projects I have been working on in the last year to keep up to date with the latest trends and explore ideas in a creative way. I welcome to test out the sites each of them have a link to them below"}
             </p>
           </div>
 
