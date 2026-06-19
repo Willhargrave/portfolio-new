@@ -116,13 +116,23 @@ export const projects: Project[] = [
   },
   {
     slug: "group-quiz-game",
-    status: "in-progress",
+    status: "active",
     technologies: ["Next", "React", "Supabase", "Python"],
     liveUrl: "https://football-quiz-iota.vercel.app/",
-    screenshots: [],
+    screenshots: [
+      {
+        src: "/screenshots/Journeyman.jpeg",
+        alt: {
+          en: "Journeyman application screenshot.",
+          ja: "Journeyman アプリケーションのスクリーンショット。",
+        },
+        width: 2900,
+        height: 1692,
+      },
+    ],
     content: {
       en: {
-        name: "Football Quiz",
+        name: "Journeyman",
         shortSummary:
           "A football quiz web app where players test their knowledge of which clubs professional footballers have played for. The app includes solo and two-player modes, using a custom player database, club badge data, fuzzy club-name matching, score tracking, lives, skips, and shareable multiplayer game codes.",
         detailedDescription:
@@ -135,11 +145,9 @@ export const projects: Project[] = [
           "[Placeholder] Group quiz session flow.",
           "[Placeholder] Score and round presentation.",
         ],
-        screenshotUnavailable:
-          "Screenshot coming after the football quiz site update.",
       },
       ja: {
-        name: "Football Quiz",
+        name: "Journeyman",
         shortSummary:
           "プロサッカー選手がどのクラブでプレーしたかを当てて知識を試すサッカークイズ Web アプリです。ソロモードと 2 人対戦モードがあり、独自の選手データベース、クラブバッジデータ、曖昧なクラブ名のマッチング、スコア管理、ライフ、スキップ、共有可能なマルチプレイヤー用ゲームコードを備えています。",
         detailedDescription:
@@ -152,8 +160,6 @@ export const projects: Project[] = [
           "[仮] グループクイズのセッション進行。",
           "[仮] スコアとラウンド表示。",
         ],
-        screenshotUnavailable:
-          "Football Quiz サイト更新後にスクリーンショットを追加予定です。",
       },
     },
   },

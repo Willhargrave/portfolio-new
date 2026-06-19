@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Locale } from "@/lib/i18n";
-import { localeCopy, locales } from "@/lib/i18n";
+import { localeCopy } from "@/lib/i18n";
+import { LanguageSwitcher } from "./language-switcher";
 
 interface SiteHeaderProps {
   locale: Locale;
@@ -38,18 +39,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
           ))}
         </nav>
 
-        <nav className="flex gap-2 text-sm" aria-label="Language switcher">
-          {locales.map((availableLocale) => (
-            <Link
-              key={availableLocale}
-              href={`/${availableLocale}`}
-              aria-current={availableLocale === locale ? "true" : undefined}
-              className="rounded-md border border-[color:var(--border)] px-2.5 py-1 font-medium text-[color:var(--muted)] transition-colors hover:border-[color:var(--accent)] hover:text-[color:var(--accent-strong)] aria-current:border-[color:var(--accent)] aria-current:text-[color:var(--accent-strong)]"
-            >
-              {availableLocale.toUpperCase()}
-            </Link>
-          ))}
-        </nav>
+        <LanguageSwitcher locale={locale} />
       </div>
     </header>
   );

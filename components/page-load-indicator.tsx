@@ -3,20 +3,27 @@
 import { useEffect, useState, type ReactNode } from "react";
 import { LoadingSpinner } from "./loading-spinner";
 
+let hasShownInitialLoad = false;
+
 interface PageLoadIndicatorProps {
   children: ReactNode;
 }
 
 export function PageLoadIndicator({ children }: PageLoadIndicatorProps) {
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(hasShownInitialLoad);
 
   useEffect(() => {
+    if (isLoaded) {
+      return;
+    }
+
     const timeoutId = window.setTimeout(() => {
+      hasShownInitialLoad = true;
       setIsLoaded(true);
     }, 2000);
 
     return () => window.clearTimeout(timeoutId);
-  }, []);
+  }, [isLoaded]);
 
   return (
     <>
