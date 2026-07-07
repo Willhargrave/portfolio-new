@@ -50,14 +50,30 @@ export function ProjectCard({ locale, project }: ProjectCardProps) {
       <div className="h-[320px] shrink-0 overflow-hidden border-b border-[color:var(--project-border,var(--border))] bg-[color:var(--project-media-background,var(--surface))]">
         {screenshot ? (
           <div className="flex h-full items-start justify-center overflow-hidden">
-            <Image
-              src={screenshot.src}
-              alt={screenshot.alt[locale]}
-              width={screenshot.width}
-              height={screenshot.height}
-              className="h-auto w-full"
-              sizes="(min-width: 1024px) 920px, 86vw"
-            />
+            {screenshot.type === "video" ? (
+              <video
+                aria-label={screenshot.alt[locale]}
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="metadata"
+                width={screenshot.width}
+                height={screenshot.height}
+                className="h-auto w-full"
+              >
+                <source src={screenshot.src} type={screenshot.mimeType} />
+              </video>
+            ) : (
+              <Image
+                src={screenshot.src}
+                alt={screenshot.alt[locale]}
+                width={screenshot.width}
+                height={screenshot.height}
+                className="h-auto w-full"
+                sizes="(min-width: 1024px) 920px, 86vw"
+              />
+            )}
           </div>
         ) : (
           <div className="flex h-full items-center justify-center p-8 text-center text-sm leading-6 text-[color:var(--project-muted,var(--muted))]">

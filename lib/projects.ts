@@ -9,6 +9,8 @@ export type ProjectStatus =
 
 export interface ProjectScreenshot {
   src: string;
+  type?: "image" | "video";
+  mimeType?: string;
   alt: Record<Locale, string>;
   width: number;
   height: number;
@@ -89,10 +91,12 @@ export const projects: Project[] = [
       "https://news-reader-git-main-will-hargraves-projects-6759c09f.vercel.app/",
     screenshots: [
       {
-        src: "/screenshots/Clean Feed2.jpeg",
+        src: "/projects/videos/CleanFeed.mov",
+        type: "video",
+        mimeType: "video/quicktime",
         alt: {
-          en: "Clean Feed application screenshot.",
-          ja: "Clean Feed アプリケーションのスクリーンショット。",
+          en: "Clean Feed application video preview.",
+          ja: "Clean Feed アプリケーションの動画プレビュー。",
         },
         width: 2900,
         height: 1700,
@@ -135,7 +139,7 @@ export const projects: Project[] = [
     slug: "group-quiz-game",
     status: "active",
     technologies: ["Next", "React", "Supabase", "Python"],
-    liveUrl: "https://football-quiz-iota.vercel.app/",
+    liveUrl: "https://journey-man-quiz.vercel.app/",
     panelTheme: {
       background: "#1B7A4A",
       foreground: "#FFFFFF",
@@ -153,10 +157,12 @@ export const projects: Project[] = [
     },
     screenshots: [
       {
-        src: "/screenshots/Journeyman.jpeg",
+        src: "/projects/videos/Journeyman.mov",
+        type: "video",
+        mimeType: "video/quicktime",
         alt: {
-          en: "Journeyman application screenshot.",
-          ja: "Journeyman アプリケーションのスクリーンショット。",
+          en: "Journeyman application video preview.",
+          ja: "Journeyman アプリケーションの動画プレビュー。",
         },
         width: 2900,
         height: 1692,
@@ -223,10 +229,12 @@ export const projects: Project[] = [
     },
     screenshots: [
       {
-        src: "/screenshots/Sketch Atlas Guess.jpeg",
+        src: "/projects/videos/Trace-my-life.mov",
+        type: "video",
+        mimeType: "video/quicktime",
         alt: {
-          en: "Sketch Atlas Guess application screenshot.",
-          ja: "Sketch Atlas Guess アプリケーションのスクリーンショット。",
+          en: "Trace My Life application video preview.",
+          ja: "Trace My Life アプリケーションの動画プレビュー。",
         },
         width: 2900,
         height: 1700,

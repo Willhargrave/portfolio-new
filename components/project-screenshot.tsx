@@ -13,6 +13,24 @@ export function ProjectScreenshot({
   screenshot,
   priority = false,
 }: ProjectScreenshotProps) {
+  if (screenshot.type === "video") {
+    return (
+      <video
+        aria-label={screenshot.alt[locale]}
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="metadata"
+        width={screenshot.width}
+        height={screenshot.height}
+        className="h-auto w-full rounded-lg border border-[color:var(--border)] bg-[color:var(--surface)] shadow-sm"
+      >
+        <source src={screenshot.src} type={screenshot.mimeType} />
+      </video>
+    );
+  }
+
   return (
     <Image
       src={screenshot.src}
