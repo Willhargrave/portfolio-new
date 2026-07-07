@@ -4,6 +4,7 @@ import type { Locale } from "@/lib/i18n";
 import { localeCopy } from "@/lib/i18n";
 import type { Project } from "@/lib/projects";
 import { ProjectStatusBadge } from "./project-status-badge";
+import { ProjectVideoPreview } from "./project-video-preview";
 import { TechnologyChip } from "./technology-chip";
 
 interface ProjectCardProps {
@@ -51,19 +52,12 @@ export function ProjectCard({ locale, project }: ProjectCardProps) {
         {screenshot ? (
           <div className="flex h-full items-start justify-center overflow-hidden">
             {screenshot.type === "video" ? (
-              <video
-                aria-label={screenshot.alt[locale]}
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="metadata"
-                width={screenshot.width}
-                height={screenshot.height}
+              <ProjectVideoPreview
                 className="h-auto w-full"
-              >
-                <source src={screenshot.src} type={screenshot.mimeType} />
-              </video>
+                locale={locale}
+                media={screenshot}
+                sizes="(min-width: 1024px) 920px, 86vw"
+              />
             ) : (
               <Image
                 src={screenshot.src}

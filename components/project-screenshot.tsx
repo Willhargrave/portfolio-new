@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { Locale } from "@/lib/i18n";
 import type { ProjectScreenshot as ProjectScreenshotData } from "@/lib/projects";
+import { ProjectVideoPreview } from "./project-video-preview";
 
 interface ProjectScreenshotProps {
   locale: Locale;
@@ -15,19 +16,12 @@ export function ProjectScreenshot({
 }: ProjectScreenshotProps) {
   if (screenshot.type === "video") {
     return (
-      <video
-        aria-label={screenshot.alt[locale]}
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="metadata"
-        width={screenshot.width}
-        height={screenshot.height}
+      <ProjectVideoPreview
         className="h-auto w-full rounded-lg border border-[color:var(--border)] bg-[color:var(--surface)] shadow-sm"
-      >
-        <source src={screenshot.src} type={screenshot.mimeType} />
-      </video>
+        locale={locale}
+        media={screenshot}
+        priority={priority}
+      />
     );
   }
 

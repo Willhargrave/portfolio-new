@@ -11,6 +11,7 @@ export interface ProjectScreenshot {
   src: string;
   type?: "image" | "video";
   mimeType?: string;
+  posterSrc?: string;
   alt: Record<Locale, string>;
   width: number;
   height: number;
@@ -94,6 +95,7 @@ export const projects: Project[] = [
         src: "/projects/videos/CleanFeed.mov",
         type: "video",
         mimeType: "video/quicktime",
+        posterSrc: "/screenshots/Clean Feed2.jpeg",
         alt: {
           en: "Clean Feed application video preview.",
           ja: "Clean Feed アプリケーションの動画プレビュー。",
@@ -160,6 +162,7 @@ export const projects: Project[] = [
         src: "/projects/videos/Journeyman.mov",
         type: "video",
         mimeType: "video/quicktime",
+        posterSrc: "/screenshots/Journeyman.jpeg",
         alt: {
           en: "Journeyman application video preview.",
           ja: "Journeyman アプリケーションの動画プレビュー。",
@@ -232,6 +235,7 @@ export const projects: Project[] = [
         src: "/projects/videos/Trace-my-life.mov",
         type: "video",
         mimeType: "video/quicktime",
+        posterSrc: "/screenshots/Sketch Atlas Guess.jpeg",
         alt: {
           en: "Trace My Life application video preview.",
           ja: "Trace My Life アプリケーションの動画プレビュー。",
