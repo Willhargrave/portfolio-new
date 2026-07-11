@@ -1,7 +1,6 @@
 import Image from "next/image";
 import type { CSSProperties } from "react";
 import type { Locale } from "@/lib/i18n";
-import { localeCopy } from "@/lib/i18n";
 import type { Project } from "@/lib/projects";
 import { ProjectStatusBadge } from "./project-status-badge";
 import { ProjectVideoPreview } from "./project-video-preview";
@@ -83,7 +82,14 @@ export function ProjectCard({ locale, project }: ProjectCardProps) {
         <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
           <div>
             <h2 className="text-2xl font-semibold tracking-normal text-[color:var(--project-foreground,var(--foreground))] sm:text-3xl">
-              {content.name}
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="underline decoration-current decoration-1 underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[color:var(--project-accent,var(--accent-strong))]"
+              >
+                {content.name}
+              </a>
             </h2>
             <p className="mt-2 max-w-3xl text-sm leading-6 text-[color:var(--project-muted,var(--muted))]">
               {content.shortSummary}
@@ -108,15 +114,6 @@ export function ProjectCard({ locale, project }: ProjectCardProps) {
             </ul>
           </section>
         </div>
-
-        <a
-          href={project.liveUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="font-heading mt-auto inline-flex w-fit items-center rounded-md bg-[color:var(--project-button-background,var(--foreground))] px-4 py-2 text-sm font-medium text-[color:var(--project-button-foreground,var(--background))] transition-colors hover:bg-[color:var(--project-button-hover-background,var(--accent-strong))]"
-        >
-          {localeCopy[locale].actions.viewProject}
-        </a>
       </div>
     </article>
   );
