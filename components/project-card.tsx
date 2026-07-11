@@ -89,6 +89,9 @@ export function ProjectCard({ locale, project }: ProjectCardProps) {
                 className="underline decoration-current decoration-1 underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[color:var(--project-accent,var(--accent-strong))]"
               >
                 {content.name}
+                <span aria-hidden="true" className="ml-2 text-[0.75em]">
+                  ↗
+                </span>
               </a>
             </h2>
             <p className="mt-2 max-w-3xl text-sm leading-6 text-[color:var(--project-muted,var(--muted))]">
